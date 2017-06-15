@@ -38,16 +38,7 @@ func NewProxyServer(node ProxyNode, chain *ProxyChain) *ProxyServer {
 	config := &tls.Config{
 		Certificates: []tls.Certificate{cert},
 		MinVersion:   tls.VersionTLS12,
-		CipherSuites: []uint16{
-			// Go 1.8 only
-			tls.TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,
-			tls.TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,
-			// go 1.7
-			tls.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
-			tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
-			//tls.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
-			//tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
-		},
+		CipherSuites: secCipherSuites,
 	}
 
 	if chain == nil {
