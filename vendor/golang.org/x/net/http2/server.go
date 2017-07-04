@@ -230,7 +230,7 @@ func ConfigureServer(s *http.Server, conf *Server) error {
 				haveRequired = true
 			}
 			if isBadCipher(cs) {
-				//sawBad = true
+				sawBad = true
 			} else if sawBad {
 				return fmt.Errorf("http2: TLSConfig.CipherSuites index %d contains an HTTP/2-approved cipher suite (%#04x), but it comes after unapproved cipher suites. With this configuration, clients that don't support previous, approved cipher suites may be given an unapproved one and reject the connection.", i, cs)
 			}

@@ -20,7 +20,7 @@ import (
 
 const (
 	//Version = "2.4-dev20170303"
-	Version = "2.4-170429"
+	Version = "2.4-170704"
 )
 
 // Log level for glog
@@ -67,7 +67,7 @@ var (
 		tls.TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,
 		// go 1.7
 		tls.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
-		tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+		//tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
 		//tls.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
 		//tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
 	}
